@@ -29,6 +29,7 @@ public class CubeMovement : MonoBehaviour
         Vector3 moveVect = new Vector3(horizontal, vertical, 0);
         rb.MovePosition(transform.position + moveVect * Time.deltaTime * speed);
 
+        //Changes cube colour based on the keyboard inputs (the direction its moving)
         if(Input.GetKeyDown(KeyCode.W))
         {
             ren.material.color = Color.blue;
@@ -44,6 +45,26 @@ public class CubeMovement : MonoBehaviour
         else if(Input.GetKeyDown(KeyCode.A)) 
         {
             ren.material.color = Color.yellow;
+        }
+
+        //Flips cube in y direction (vertical) when going off screen
+        if(this.transform.position.y > 5)
+        {
+            this.transform.position = new Vector3(transform.position.x, -5, transform.position.z);
+        }
+        else if(this.transform.position.y < -5)
+        {
+            this.transform.position = new Vector3(transform.position.x, 5, transform.position.z);
+        }
+
+        //Flips cube in x direction (horizontal) when going off screen
+        if (this.transform.position.x > 9)
+        {
+            this.transform.position = new Vector3(-9, transform.position.y, transform.position.z);
+        }
+        else if (this.transform.position.x < -9)
+        {
+            this.transform.position = new Vector3(9, transform.position.y, transform.position.z);
         }
     }
 
