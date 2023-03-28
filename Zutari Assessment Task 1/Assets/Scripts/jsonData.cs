@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 
+//Root json class containing all variables for json interpretation
 [Serializable]
 public class jsonData
 {
@@ -20,6 +21,7 @@ public class jsonData
 
 }
 
+//coordinate values
 [Serializable]
 public class coord
 {
@@ -27,6 +29,7 @@ public class coord
     public double lat;
 }
 
+//weather values
 [Serializable]
 public class weather
 {
@@ -36,6 +39,7 @@ public class weather
     public string icon;
 }
 
+//"main" values
 [Serializable]
 public class main
 {
@@ -47,6 +51,7 @@ public class main
     public int humidity;
 }
 
+//wing values
 [Serializable]
 public class wind
 {
@@ -56,12 +61,14 @@ public class wind
     public string icon;
 }
 
+//cloud values
 [Serializable]
 public class clouds
 {
     public int all;
 }
 
+//other values
 [Serializable]
 public class sys
 {
